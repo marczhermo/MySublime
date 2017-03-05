@@ -1,0 +1,78 @@
+[
+    { "keys": ["n", "n"], "command": "advanced_new_file_new",
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": true }
+        ]
+    },
+    { "keys": ["j", "j"], "command": "exit_insert_mode",
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+    { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+    { "keys": ["ctrl+shift+j"], "command": "ace_jump_char" },
+    { "keys": ["ctrl+shift+a"], "command": "ace_jump_word" },
+    { "keys": ["ctrl+k", "ctrl+k"], "command": "travel_to_pane", "args": {"direction": "up"} },
+    { "keys": ["ctrl+k", "ctrl+l"], "command": "travel_to_pane", "args": {"direction": "right"} },
+    { "keys": ["ctrl+k", "ctrl+j"], "command": "travel_to_pane", "args": {"direction": "down"} },
+    { "keys": ["ctrl+k", "ctrl+h"], "command": "travel_to_pane", "args": {"direction": "left"} },
+    { "keys": ["ctrl+shift+."], "command": "jump_forward" },
+    { "keys": ["ctrl+shift+,"], "command": "jump_back" },
+    { "keys": ["ctrl+shift+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+shift+l"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+shift+r"], "command": "goto_definition" },
+    { "keys": ["ctrl+shift+t"], "command": "open_terminal" },
+    { "keys": ["ctrl+shift+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+shift+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+d"], "command": "find_under_expand" },
+    { "keys": ["ctrl+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+    { "keys": ["ctrl+e"], "command": "next_view_in_stack" },
+    { "keys": ["ctrl+k", "ctrl+s"], "command": "reveal_in_side_bar" },
+    { "keys": [":", "v", "s", "p"], "command": "create_pane", "args": {"direction": "right", "give_focus": true}},
+    { "keys": [":", "s", "p"], "command": "create_pane", "args": {"direction": "down", "give_focus": true} },
+    { "keys": [":", "b", "d"],
+        "command": "run_multiple_commands",
+        "args": {
+          "commands": [
+            {"command": "destroy_pane", "args": {"direction": "self"}, "context": "window"},
+            {"command": "close", "context": "window"}
+          ]}
+    },
+    { "keys": ["ctrl+shift+k"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {
+                    "command": "exit_insert_mode"
+                },
+                {
+                    "command": "run_macro_file",
+                    "args": {
+                        "file": "res://Packages/Default/Delete Line.sublime-macro"
+                    }
+                }
+            ]
+        }
+    },
+    { "keys": ["ctrl+k", "ctrl+v"], "command": "reveal_in_side_bar" },
+    { "keys": ["alt+shift+0"], "command": "pharko_list", "args": {} },
+    { "keys": ["alt+shift+9"], "command": "pharko_sample" },
+    { "keys": ["alt+shift+8"],
+        "command": "insert_snippet",
+        "args": {
+            "contents": "console.log('=== HEARTBEAT $TM_FILENAME [$TM_LINE_NUMBER] ===${0}');"
+        },
+        "context": []
+    },
+    { "keys": ["alt+shift+7"],
+        "command": "insert_snippet",
+        "args": {
+            "name":"Packages/Pharko/php/constructor.sublime-snippet"
+        },
+        "context": []
+    }
+]
